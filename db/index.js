@@ -17,7 +17,7 @@ class DB {
 
     try {
       if(process.env.JAWSDB_URL) {
-        this.conn = mysql.createConnection(process.env.JAWSDB_URL);
+        this.conn = mysql.createConnection(process.env.JAWSDB_URL).promise();
       } else {
         this.conn = mysql.createConnection(this.config).promise()
       }
